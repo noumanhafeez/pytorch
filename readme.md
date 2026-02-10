@@ -28,3 +28,61 @@
 
 ### 4. Training Process: During forward pass, or backward pass, tensor is use for calculation.
 
+# What is derivatives and why do we need this?
+
+### Derivative = “How much does output change if I slightly change input?”
+
+### In ML: Model output depends on weights Derivative tells: “If I slightly change this weight, does my prediction get better or worse?”
+
+### Without derivatives, the model has no idea which direction to improve.
+
+## What is the Chain Rule Multiplication (the heart of deep learning ❤️)
+
+### Chain rule answers: If A affects B, and B affects C, how much does A affect C?
+
+### Similarly in math: Suppose y = (x² + 1) z = 3y. Then we want: dy/dz. So, chain rule will apply here:
+
+### dz/dx = dz/dy * dy/dx. Solve it Steps by Steps: dy/dx = 2x, dz/dy = 3. dz/dx = dz/dy × dy/dx = 3 × 2x = 6x. It's means, the rate changing regarding to parameter x and y is 6x. I just use 2 equation here. Assume we have 100, 1000 or maybe millions of equations, then apply chain rule to each individually will impossible by hand.  
+
+### So, here, we can use backpropagation method for compute fast
+
+## Now the BIG PICTURE (training loop)
+
+### Training a neural network has 4 steps, repeated again and again 🔁
+
+
+## Step 1: 
+
+### Forward Pass (prediction time):  Input goes forward through the network. Input image → CNN → FC → Output (cat or dog) Here: Model uses current weights Produces a prediction
+
+### 📌 No learning yet — just guessing
+
+## Step 2:
+
+### Compute Loss (how wrong am I?) Loss = “How bad is my prediction?” loss = (prediction - true)² Loss is a single number that summarizes error.
+
+
+## Step 3: 
+
+### Backward Pass (learning happens here). Now we ask: “Which weight caused the error, and by how much?"  Backward pass:
+
+### Start from loss
+
+### Move backward layer by layer
+
+### Apply chain rule
+
+### Compute gradients
+
+### Meaning: “If I change this weight a little, how much will loss change?”
+
+### 📌 This is why it’s called backpropagation.
+
+## Step 4: 
+
+### Update Weights (become smarter): Now we update weights using gradients. 
+
+### Rule: new_weight = old_weight - learning_rate × gradient
+
+
+## These are the core steps we use use in trainning process. For backpropagation, we use autograd (a library  of pytorch) for auto derivatives 
