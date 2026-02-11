@@ -85,4 +85,14 @@
 ### Rule: new_weight = old_weight - learning_rate × gradient
 
 
-## These are the core steps we use use in trainning process. For backpropagation, we use autograd (a library  of pytorch) for auto derivatives 
+## These are the core steps we use use in trainning process. For backpropagation, we use autograd (a library  of pytorch) for auto derivatives
+
+# What is Pytorch nn modules?
+
+### torch.nn is a toolbox of ready-made building blocks for creating neural networks. 
+
+### Instead of building everything from scratch (weights, bias, forward pass logic), PyTorch gives you pre-built layers like:
+
+### Linear layer, Convolution layer, RNN, LSTM. Activation functions: Loss functions
+
+### All inside torch.nn. With the help of nn modules, we can create neural networks and access pre-built functions like optim (optimization functions) etc.
