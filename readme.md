@@ -96,3 +96,24 @@
 ### Linear layer, Convolution layer, RNN, LSTM. Activation functions: Loss functions
 
 ### All inside torch.nn. With the help of nn modules, we can create neural networks and access pre-built functions like optim (optimization functions) etc.
+
+
+# What are the solutions of handling Overfitting of Model?
+
+## There are multiple ways of handling overfitting and are given below:
+
+### 1. Add more Data.
+### 2. Reduce the complexity of neural network architecture.
+### 3. Regularization (NOTE: Mostly, L2 regularization use in deep learning)
+### 4. Dropouts
+### 5. Data Augmentation
+### 6. Batch Normalization 
+### Batch Normalization is a technique used to improve training stability and speed. It normalizes the activations (outputs) 
+### of a hidden layer for each mini-batch so that they have approximately mean = 0 and standard deviation = 1. 
+### This helps the model train faster and more reliably.
+### Internal Covariate Shift refers to the problem where the distribution of inputs to a layer keeps changing during 
+### training because the parameters of previous layers are constantly being updated. 
+### As a result, each layer has to continuously adapt to new input distributions, which slows down training and makes optimization harder.
+### By normalizing the activations in each mini-batch, Batch Normalization reduces this shift, 
+### stabilizes the learning process, and allows the use of higher learning rates.
+### 7. Early Stopping
