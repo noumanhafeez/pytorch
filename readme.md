@@ -117,3 +117,14 @@
 ### By normalizing the activations in each mini-batch, Batch Normalization reduces this shift, 
 ### stabilizes the learning process, and allows the use of higher learning rates.
 ### 7. Early Stopping
+
+## Hyper-parameter Tuning
+### There are multiple ways of tuning parameters like set learning rate, use different optimizer, change architect
+### of hidden layer, change epochs.
+## All these things can be done manually or using optuna like framework.
+
+## Types of auto hyperparameter tuning
+
+### 1. GridSearch CV (Try every possible combinations. It's slow and best for small numbers of parameters)
+### 2. Random Search CV (Try random possible combinations. It's fast than GridSearch but may miss best result)
+### 3. Baysean Search (It's fast and efficient than RandomCV. It's learn from past behavior and change parameters accordingly)
